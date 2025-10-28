@@ -47,17 +47,20 @@ A Jekyll-based academic portfolio website inspired by Eugene Yan's clean, minima
 ### Local Development
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/scientistkev/scientistkev.github.io.git
    cd scientistkev.github.io
    ```
 
 2. Install dependencies:
+
    ```bash
    bundle install
    ```
 
 3. Run the development server:
+
    ```bash
    bundle exec jekyll serve
    ```
@@ -93,11 +96,13 @@ The main stylesheet is located at `assets/css/main.css`. The design uses:
 #### Blog Posts
 
 Create new blog posts in the `_posts/` directory using the format:
+
 ```
 YYYY-MM-DD-title-of-post.md
 ```
 
 Include front matter:
+
 ```yaml
 ---
 layout: post
@@ -106,13 +111,14 @@ date: 2024-01-01
 categories: [Category1, Category2]
 tags: [tag1, tag2, tag3]
 excerpt: "Brief description of the post"
-popular: true  # Optional: marks as trending
+popular: true # Optional: marks as trending
 ---
 ```
 
 #### Projects
 
 Create project pages in the `_projects/` directory with front matter:
+
 ```yaml
 ---
 layout: project
@@ -123,7 +129,7 @@ tech_stack: [Python, TensorFlow, Docker]
 github_url: "https://github.com/username/repo"
 demo_url: "https://demo.example.com"
 tags: [machine-learning, research]
-featured: true  # Optional: shows on homepage
+featured: true # Optional: shows on homepage
 ---
 ```
 
@@ -136,6 +142,7 @@ The site includes client-side search powered by JavaScript. The search index is 
 ### Newsletter Integration
 
 The newsletter signup form is ready for integration with email services like:
+
 - Mailchimp
 - ConvertKit
 - Substack
@@ -150,6 +157,7 @@ The site is ready for analytics integration. Add your tracking codes to `_includ
 ## Performance
 
 The site is optimized for performance with:
+
 - Minimal CSS and JavaScript
 - Optimized images
 - Clean HTML structure
