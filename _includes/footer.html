@@ -1,0 +1,34 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-bio">
+                <p>{{ site.description }}</p>
+            </div>
+            
+            <div class="footer-links">
+                {% if site.github_username %}
+                    <a href="https://github.com/{{ site.github_username }}" 
+                       class="footer-link" target="_blank" rel="noopener">
+                        GitHub
+                    </a>
+                {% endif %}
+                {% if site.twitter_username %}
+                    <a href="https://twitter.com/{{ site.twitter_username }}" 
+                       class="footer-link" target="_blank" rel="noopener">
+                        Twitter
+                    </a>
+                {% endif %}
+                {% if site.linkedin_username %}
+                    <a href="https://linkedin.com/in/{{ site.linkedin_username }}" 
+                       class="footer-link" target="_blank" rel="noopener">
+                        LinkedIn
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

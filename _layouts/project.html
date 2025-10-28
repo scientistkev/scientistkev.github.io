@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<article class="project">
+    <header class="project-header">
+        <h1 class="project-title">{{ page.title }}</h1>
+        <div class="project-meta">
+            {% if page.date %}
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
+            {% endif %}
+            {% if page.tech_stack %}
+                <div class="tech-stack">
+                    {% for tech in page.tech_stack %}
+                        <span class="tech">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% if page.description %}
+            <div class="project-description">{{ page.description }}</div>
+        {% endif %}
+        
+        <div class="project-links">
+            {% if page.github_url %}
+                <a href="{{ page.github_url }}" class="project-link github" target="_blank" rel="noopener">
+                    GitHub
+                </a>
+            {% endif %}
+            {% if page.demo_url %}
+                <a href="{{ page.demo_url }}" class="project-link demo" target="_blank" rel="noopener">
+                    Live Demo
+                </a>
+            {% endif %}
+            {% if page.paper_url %}
+                <a href="{{ page.paper_url }}" class="project-link paper" target="_blank" rel="noopener">
+                    Paper
+                </a>
+            {% endif %}
+        </div>
+    </header>
+    
+    <div class="project-content">
+        {{ content }}
+    </div>
+    
+    <footer class="project-footer">
+        {% if page.tags.size > 0 %}
+            <div class="project-tags">
+                {% for tag in page.tags %}
+                    <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </footer>
+</article>

@@ -1,1 +1,182 @@
-Hello World
+---
+layout: default
+title: Home
+---
+
+<div class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Hi, I'm Kevin McPherson</h1>
+      <p class="hero-description">
+        I build AI systems and conduct research that bridges theory and
+        practice. Currently focused on machine learning, data science, and
+        academic research. Outside of work, I also...
+      </p>
+      <ul class="hero-highlights">
+        <li>
+          Write and speak about machine learning, AI systems, and research
+          methodologies.
+        </li>
+        <li>
+          Prototype applications and tools for data science and AI research.
+        </li>
+        <li>
+          Teach and mentor in applied machine learning and academic research.
+        </li>
+        <li>
+          Share insights through publications and open-source contributions.
+        </li>
+      </ul>
+
+      <!-- Newsletter signup -->
+      <div class="newsletter-signup">
+        <h3>Get email updates</h3>
+        <form class="newsletter-form" action="#" method="post">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Search Section -->
+<section class="search-section">
+  <div class="container">{% include search.html %}</div>
+</section>
+
+<!-- Latest Posts -->
+<section class="latest-section">
+  <div class="container">
+    <h2 class="section-title">Latest</h2>
+    <div class="posts-grid">
+      {% for post in site.posts limit:5 %}
+      <article class="post-card">
+        <div class="post-card-content">
+          <time class="post-date">{{ post.date | date: "%d %b %Y" }}</time>
+          <h3 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          {% if post.excerpt %}
+          <p class="post-card-excerpt">
+            {{ post.excerpt | strip_html | truncate: 120 }}
+          </p>
+          {% endif %} {% if post.categories.size > 0 %}
+          <div class="post-card-categories">
+            {% for category in post.categories %}
+            <span class="category">{{ category }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-footer">
+      <a href="{{ '/writing/' | relative_url }}" class="view-all-link"
+        >View all posts →</a
+      >
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="featured-section">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      {% assign featured_projects = site.projects | where: "featured", true %}
+      {% for project in featured_projects limit:3 %}
+      <article class="project-card">
+        <div class="project-card-content">
+          <h3 class="project-card-title">
+            <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+          </h3>
+          {% if project.description %}
+          <p class="project-card-description">
+            {{ project.description | truncate: 120 }}
+          </p>
+          {% endif %} {% if project.tech_stack %}
+          <div class="project-card-tech">
+            {% for tech in project.tech_stack limit:3 %}
+            <span class="tech">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <div class="project-card-links">
+            {% if project.github_url %}
+            <a
+              href="{{ project.github_url }}"
+              class="project-link"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            {% endif %} {% if project.demo_url %}
+            <a
+              href="{{ project.demo_url }}"
+              class="project-link"
+              target="_blank"
+              rel="noopener"
+              >Demo</a
+            >
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-footer">
+      <a href="{{ '/projects/' | relative_url }}" class="view-all-link"
+        >View all projects →</a
+      >
+    </div>
+  </div>
+</section>
+
+<!-- Trending This Week -->
+<section class="trending-section">
+  <div class="container">
+    <h2 class="section-title">Trending This Week</h2>
+    <div class="trending-list">
+      {% assign popular_posts = site.posts | where: "popular", true %} {% for
+      post in popular_posts limit:5 %}
+      <article class="trending-item">
+        <time class="trending-date">{{ post.date | date: "%d %b %Y" }}</time>
+        <h3 class="trending-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">{{ site.posts.size }}</span>
+        <span class="stat-label">posts</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ site.projects.size }}</span>
+        <span class="stat-label">projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">0</span>
+        <span class="stat-label">talks</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">0</span>
+        <span class="stat-label">prototypes</span>
+      </div>
+    </div>
+  </div>
+</section>

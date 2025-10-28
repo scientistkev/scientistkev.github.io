@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Interpretability Toolkit | Kevin McPherson</title>
+    <meta name="description" content="Overview">
+    
+    <!-- SEO -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Neural Network Interpretability Toolkit | Kevin McPherson</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Neural Network Interpretability Toolkit" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A comprehensive toolkit for understanding and interpreting deep neural network decisions through various visualization and analysis techniques." />
+<meta property="og:description" content="A comprehensive toolkit for understanding and interpreting deep neural network decisions through various visualization and analysis techniques." />
+<link rel="canonical" href="https://scientistkev.github.io/projects/neural-network-interpretability/" />
+<meta property="og:url" content="https://scientistkev.github.io/projects/neural-network-interpretability/" />
+<meta property="og:site_name" content="Kevin McPherson" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-03-01T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Neural Network Interpretability Toolkit" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-03-01T00:00:00-05:00","datePublished":"2024-03-01T00:00:00-05:00","description":"A comprehensive toolkit for understanding and interpreting deep neural network decisions through various visualization and analysis techniques.","headline":"Neural Network Interpretability Toolkit","mainEntityOfPage":{"@type":"WebPage","@id":"https://scientistkev.github.io/projects/neural-network-interpretability/"},"url":"https://scientistkev.github.io/projects/neural-network-interpretability/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Feed -->
+    <link type="application/atom+xml" rel="alternate" href="https://scientistkev.github.io/feed.xml" title="Kevin McPherson" />
+</head>
+<body>
+    <header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="site-title">
+                <a href="/">Kevin McPherson</a>
+            </div>
+            
+            <nav class="site-nav">
+                <ul class="nav-list">
+                    
+                        <li class="nav-item">
+                            <a href="/writing/" 
+                               class="nav-link ">
+                                Writing
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a href="/projects/" 
+                               class="nav-link ">
+                                Projects
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a href="/about/" 
+                               class="nav-link ">
+                                About
+                            </a>
+                        </li>
+                    
+                </ul>
+                
+                <!-- Mobile menu toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+        
+        <!-- Mobile navigation -->
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                
+                    <li class="mobile-nav-item">
+                        <a href="/writing/" 
+                           class="mobile-nav-link ">
+                            Writing
+                        </a>
+                    </li>
+                
+                    <li class="mobile-nav-item">
+                        <a href="/projects/" 
+                           class="mobile-nav-link ">
+                            Projects
+                        </a>
+                    </li>
+                
+                    <li class="mobile-nav-item">
+                        <a href="/about/" 
+                           class="mobile-nav-link ">
+                            About
+                        </a>
+                    </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    
+    <main class="main-content">
+        <article class="project">
+    <header class="project-header">
+        <h1 class="project-title">Neural Network Interpretability Toolkit</h1>
+        <div class="project-meta">
+            
+                <time datetime="2024-03-01T00:00:00-05:00">01 Mar 2024</time>
+            
+            
+                <div class="tech-stack">
+                    
+                        <span class="tech">Python</span>
+                    
+                        <span class="tech">PyTorch</span>
+                    
+                        <span class="tech">Matplotlib</span>
+                    
+                        <span class="tech">Streamlit</span>
+                    
+                </div>
+            
+        </div>
+        
+            <div class="project-description">A comprehensive toolkit for understanding and interpreting deep neural network decisions through various visualization and analysis techniques.</div>
+        
+        
+        <div class="project-links">
+            
+                <a href="https://github.com/scientistkev/nn-interpretability" class="project-link github" target="_blank" rel="noopener">
+                    GitHub
+                </a>
+            
+            
+                <a href="https://nn-interpretability.streamlit.app" class="project-link demo" target="_blank" rel="noopener">
+                    Live Demo
+                </a>
+            
+            
+        </div>
+    </header>
+    
+    <div class="project-content">
+        <h2 id="overview">Overview</h2>
+
+<p>The Neural Network Interpretability Toolkit provides researchers and practitioners with a comprehensive set of tools for understanding how deep neural networks make decisions. This project addresses the critical need for transparency in AI systems, especially in high-stakes applications.</p>
+
+<h2 id="key-features">Key Features</h2>
+
+<h3 id="gradient-based-methods">Gradient-Based Methods</h3>
+
+<ul>
+  <li><strong>Gradient Visualization</strong>: Visualize gradients with respect to input features</li>
+  <li><strong>Integrated Gradients</strong>: Compute attribution scores using integrated gradients</li>
+  <li><strong>Guided Backpropagation</strong>: Enhanced gradient visualization technique</li>
+</ul>
+
+<h3 id="activation-analysis">Activation Analysis</h3>
+
+<ul>
+  <li><strong>Layer-wise Activation Maps</strong>: Understand what different layers learn</li>
+  <li><strong>Feature Map Visualization</strong>: Visualize convolutional feature maps</li>
+  <li><strong>Activation Maximization</strong>: Find inputs that maximize specific neurons</li>
+</ul>
+
+<h3 id="model-probing">Model Probing</h3>
+
+<ul>
+  <li><strong>Linear Probing</strong>: Test what information is encoded in representations</li>
+  <li><strong>Concept Activation Vectors</strong>: Measure sensitivity to human-interpretable concepts</li>
+  <li><strong>Representation Similarity Analysis</strong>: Compare learned representations</li>
+</ul>
+
+<h2 id="technical-implementation">Technical Implementation</h2>
+
+<p>The toolkit is built with modularity and extensibility in mind:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">nn_interpretability</span> <span class="kn">import</span> <span class="n">InterpretabilityAnalyzer</span>
+
+<span class="c1"># Initialize analyzer with your model
+</span><span class="n">analyzer</span> <span class="o">=</span> <span class="n">InterpretabilityAnalyzer</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+<span class="c1"># Generate various interpretability visualizations
+</span><span class="n">gradients</span> <span class="o">=</span> <span class="n">analyzer</span><span class="p">.</span><span class="n">compute_gradients</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+<span class="n">activations</span> <span class="o">=</span> <span class="n">analyzer</span><span class="p">.</span><span class="n">get_layer_activations</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">)</span>
+<span class="n">attributions</span> <span class="o">=</span> <span class="n">analyzer</span><span class="p">.</span><span class="n">integrated_gradients</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">target_class</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="applications">Applications</h2>
+
+<h3 id="computer-vision">Computer Vision</h3>
+
+<ul>
+  <li>Image classification interpretation</li>
+  <li>Object detection analysis</li>
+  <li>Medical imaging diagnostics</li>
+  <li>Autonomous vehicle perception</li>
+</ul>
+
+<h3 id="natural-language-processing">Natural Language Processing</h3>
+
+<ul>
+  <li>Text classification explanations</li>
+  <li>Attention mechanism analysis</li>
+  <li>Sentiment analysis interpretation</li>
+  <li>Language model probing</li>
+</ul>
+
+<h2 id="research-contributions">Research Contributions</h2>
+
+<p>This project has contributed to several research papers and has been used in:</p>
+
+<ul>
+  <li>Academic research on model interpretability</li>
+  <li>Industry applications requiring explainable AI</li>
+  <li>Educational materials for understanding deep learning</li>
+  <li>Regulatory compliance in AI systems</li>
+</ul>
+
+<h2 id="future-developments">Future Developments</h2>
+
+<p>Planned enhancements include:</p>
+
+<ul>
+  <li>Support for transformer architectures</li>
+  <li>Real-time interpretation capabilities</li>
+  <li>Integration with popular ML frameworks</li>
+  <li>Advanced visualization techniques</li>
+  <li>Automated report generation</li>
+</ul>
+
+<h2 id="impact">Impact</h2>
+
+<p>The toolkit has been adopted by researchers at several universities and has helped improve understanding of neural network behavior in various domains. It continues to evolve based on community feedback and emerging research in interpretability.</p>
+
+    </div>
+    
+    <footer class="project-footer">
+        
+            <div class="project-tags">
+                
+                    <span class="tag">interpretability</span>
+                
+                    <span class="tag">visualization</span>
+                
+                    <span class="tag">deep-learning</span>
+                
+                    <span class="tag">toolkit</span>
+                
+            </div>
+        
+    </footer>
+</article>
+
+    </main>
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-bio">
+                <p>I build AI systems and conduct research that bridges theory and practice. Currently focused on machine learning, data science, and academic research.</p>
+            </div>
+            
+            <div class="footer-links">
+                
+                    <a href="https://github.com/scientistkev" 
+                       class="footer-link" target="_blank" rel="noopener">
+                        GitHub
+                    </a>
+                
+                
+                    <a href="https://twitter.com/your_twitter" 
+                       class="footer-link" target="_blank" rel="noopener">
+                        Twitter
+                    </a>
+                
+                
+                    <a href="https://linkedin.com/in/your_linkedin" 
+                       class="footer-link" target="_blank" rel="noopener">
+                        LinkedIn
+                    </a>
+                
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kevin McPherson. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

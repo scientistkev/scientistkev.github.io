@@ -1,0 +1,71 @@
+# Site settings
+title: Kevin McPherson
+email: your-email@example.com
+description: >-
+  I build AI systems and conduct research that bridges theory and practice.
+  Currently focused on machine learning, data science, and academic research.
+baseurl: ""
+url: "https://scientistkev.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Pagination
+paginate: 10
+paginate_path: "/writing/page:num/"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Kevin McPherson"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Social links
+github_username: scientistkev
+twitter_username: your_twitter
+linkedin_username: your_linkedin
+
+# Site navigation
+navigation:
+  - title: "Writing"
+    url: "/writing/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "About"
+    url: "/about/"

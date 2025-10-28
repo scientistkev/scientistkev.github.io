@@ -1,0 +1,104 @@
+<div class="search-container">
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search posts and projects..." autocomplete="off">
+        <button type="button" id="search-button" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+        </button>
+    </div>
+    
+    <div id="search-results" class="search-results" style="display: none;">
+        <div class="search-results-header">
+            <h3>Search Results</h3>
+            <button type="button" id="search-close" aria-label="Close search">×</button>
+        </div>
+        <div id="search-results-list" class="search-results-list">
+            <!-- Results will be populated by JavaScript -->
+        </div>
+    </div>
+</div>
+
+<script>
+// Simple search functionality
+(function() {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const searchResults = document.getElementById('search-results');
+    const searchResultsList = document.getElementById('search-results-list');
+    const searchClose = document.getElementById('search-close');
+    
+    let searchData = [];
+    
+    // Load search data
+    fetch('{{ "/search.json" | relative_url }}')
+        .then(response => response.json())
+        .then(data => {
+            searchData = data;
+        })
+        .catch(error => console.error('Error loading search data:', error));
+    
+    function performSearch(query) {
+        if (!query.trim()) {
+            hideResults();
+            return;
+        }
+        
+        const results = searchData.filter(item => {
+            const searchText = (item.title + ' ' + item.content + ' ' + (item.tags || []).join(' ')).toLowerCase();
+            return searchText.includes(query.toLowerCase());
+        });
+        
+        displayResults(results, query);
+    }
+    
+    function displayResults(results, query) {
+        if (results.length === 0) {
+            searchResultsList.innerHTML = '<p class="no-results">No results found for "' + query + '"</p>';
+        } else {
+            searchResultsList.innerHTML = results.map(item => `
+                <div class="search-result-item">
+                    <h4><a href="${item.url}">${item.title}</a></h4>
+                    <p class="search-result-excerpt">${item.excerpt || ''}</p>
+                    <div class="search-result-meta">
+                        <span class="search-result-type">${item.type}</span>
+                        ${item.date ? `<span class="search-result-date">${item.date}</span>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        searchResults.style.display = 'block';
+    }
+    
+    function hideResults() {
+        searchResults.style.display = 'none';
+    }
+    
+    // Event listeners
+    searchInput.addEventListener('input', (e) => {
+        performSearch(e.target.value);
+    });
+    
+    searchButton.addEventListener('click', () => {
+        performSearch(searchInput.value);
+    });
+    
+    searchClose.addEventListener('click', hideResults);
+    
+    // Close search when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-container')) {
+            hideResults();
+        }
+    });
+    
+    // Handle Enter key
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            performSearch(searchInput.value);
+        }
+    });
+})();
+</script>
