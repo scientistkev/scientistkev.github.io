@@ -160,8 +160,8 @@ a:hover {
 }
 
 .hero-image {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -749,8 +749,8 @@ a:hover {
     }
     
     .hero-image {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
     
     .hero-title {
