@@ -153,6 +153,24 @@ a:hover {
     border-bottom: 1px solid #eee;
 }
 
+.hero-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.hero-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
 .hero-title {
     font-size: 2.5rem;
     font-weight: 600;
@@ -722,6 +740,17 @@ a:hover {
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hero-image {
+        width: 150px;
+        height: 150px;
     }
     
     .hero-title {
